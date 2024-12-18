@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMoveLeft : MonoBehaviour
+public class PlayerMoveRight : MonoBehaviour
 {
     private Rigidbody2D physicsBody = null;
 
@@ -13,20 +13,20 @@ public class PlayerMoveLeft : MonoBehaviour
         physicsBody = GetComponent<Rigidbody2D>();
     }
 
-    public void MoveLeft()
+    public void MoveRight()
     {
-        //physicsBody.velocity.x = -1;
+        //physicsBody.velocity.x = 1;
 
         //making a varibale to hold our velocity
         //get varible from rigidbody
         Vector2 newVelocity = physicsBody.velocity;
 
-        newVelocity.x = -1;
+        newVelocity.x = 1;
 
         physicsBody.velocity = newVelocity;
     }
 
 }
 
-    
+
 
