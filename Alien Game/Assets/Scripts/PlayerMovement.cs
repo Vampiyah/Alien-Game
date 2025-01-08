@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMoveLeft : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D physicsBody = null;
+    public float speed = 4f;
+    public float jumpSpeed = 10f;
+    public Collider2D groundSensor = null;
+    public LayerMask groundLayer = 0;
+
 
     // Awake is called before start
     private void Awake()
@@ -21,12 +26,41 @@ public class PlayerMoveLeft : MonoBehaviour
         //get varible from rigidbody
         Vector2 newVelocity = physicsBody.velocity;
 
-        newVelocity.x = -1;
+        newVelocity.x = -speed;
 
         physicsBody.velocity = newVelocity;
     }
 
+    public void MoveRight()
+    {
+        //physicsBody.velocity.x = 1;
+
+        //making a varibale to hold our velocity
+        //get varible from rigidbody
+        Vector2 newVelocity = physicsBody.velocity;
+
+        newVelocity.x = speed;
+
+        physicsBody.velocity = newVelocity;
+    }
+
+    public void Jump()
+    {
+        if (groundSensor.IsTouchingLayers(groundLayer))
+        {
+
+            Vector2 newVelocity = physicsBody.velocity;
+
+            newVelocity.y = jumpSpeed;
+
+            physicsBody.velocity = newVelocity;
+        }
+
+    }
+
 }
+
+
 
     
 
