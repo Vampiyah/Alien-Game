@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveLeft()
     {
-        //physicsBody.velocity.x = -1;
+       
 
         //making a varibale to hold our velocity
         //get varible from rigidbody
@@ -47,10 +47,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveRight()
     {
-        //physicsBody.velocity.x = 1;
+     
 
-        //making a varibale to hold our velocity
-        //get varible from rigidbody
+       // making a varibale to hold our velocity
+       // get varible from rigidbody
         Vector2 newVelocity = physicsBody.velocity;
 
         newVelocity.x = speed;
