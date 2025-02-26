@@ -34,29 +34,27 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveLeft()
     {
-       
-
-        //making a varibale to hold our velocity
-        //get varible from rigidbody
+        // Making a variable to hold our velocity
         Vector2 newVelocity = physicsBody.velocity;
 
-        newVelocity.x = speed * myJoystick.Horizontal;
+        // Move left by setting negative speed value
+        newVelocity.x = -speed;
 
         physicsBody.velocity = newVelocity;
     }
 
     public void MoveRight()
     {
-     
-
-       // making a varibale to hold our velocity
-       // get varible from rigidbody
+        // Making a variable to hold our velocity
+        // Get variable from rigidbody
         Vector2 newVelocity = physicsBody.velocity;
 
+        // Move right by setting positive speed value
         newVelocity.x = speed;
 
         physicsBody.velocity = newVelocity;
     }
+
 
     public void Jump()
     {
