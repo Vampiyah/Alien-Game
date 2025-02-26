@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 newVelocity = physicsBody.velocity;
 
-        newVelocity.x = -speed;
+        newVelocity.x = speed * myJoystick.Horizontal;
 
         physicsBody.velocity = newVelocity;
 
